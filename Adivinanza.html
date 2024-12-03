@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let numeroAleatorio = Math.floor(Math.random() * 10) + 1;
+    alert(numeroAleatorio)
+    let numeroIngresado = parseInt(prompt('Adivina el numero secreto entre 1 y 10:'))
+    while(numeroIngresado !== numeroAleatorio){
+        alert('Lo siento no es ese...')
+        numeroIngresado = parseInt(prompt('Intentalo otra ves!:'))
+    }
+    alert(`Asi es el numero es ${numeroAleatorio}`)
+</script>
+</html>

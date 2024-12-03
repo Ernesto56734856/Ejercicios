@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Básica</title>
+</head>
+<body>
+    <script>
+        function calculadoraBasica() {
+            let continuar;
+            do {
+                let numero1 = parseFloat(prompt("Ingrese el primer número:"));
+                let numero2 = parseFloat(prompt("Ingrese el segundo número:"));
+                let operacion = prompt("Ingrese la operación (+, -, *, /):");
+                while (!['+', '-', '*', '/'].includes(operacion)) {
+                    alert("Operación no válida. Por favor, ingrese +, -, * o /.");
+                    operacion = prompt("Ingrese la operación (+, -, *, /):");
+                }
+                let resultado;
+                switch (operacion) {
+                    case '+':
+                        resultado = numero1 + numero2;
+                        break;
+                    case '-':
+                        resultado = numero1 - numero2;
+                        break;
+                    case '*':
+                        resultado = numero1 * numero2;
+                        break;
+                    case '/':
+                        if (numero2 === 0) {
+                            alert("Error: No se puede dividir por 0.");
+                            resultado = "Indefinido";
+                        } else {
+                            resultado = numero1 / numero2;
+                        }
+                        break;
+                }
+                alert(`El resultado de ${numero1} ${operacion} ${numero2} es: ${resultado}`);
+                continuar = prompt("¿Desea realizar otra operación? (sí/no)");
+            } while (continuar === 'si');
+            alert("¡Gracias por usar la calculadora! Hasta pronto.");
+        }
+        calculadoraBasica();
+    </script>
+</body>
+</html>

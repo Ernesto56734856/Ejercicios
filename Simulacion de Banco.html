@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulación de Banco</title>
+</head>
+<body>
+    <script>
+        function simulacionBanco() {
+            let saldo = 1000;
+            let continuar;
+
+            alert(`¡Bienvenido al Banco! Tu saldo inicial es: $${saldo}`);
+
+            do {
+                let transaccion = prompt("¿Qué deseas hacer? Ingresa 'd' para depósito o 'r' para retiro:")
+                while (!['d', 'r'].includes(transaccion)) {
+                    alert("Opción no válida. Por favor, ingresa 'd' para depósito o 'r' para retiro.");
+                    transaccion = prompt("¿Qué deseas hacer? Ingresa 'd' para depósito o 'r' para retiro:")
+                }
+                let monto = parseFloat(prompt("Ingresa el monto:"));
+                while (isNaN(monto) || monto <= 0) {
+                    alert("El monto debe ser un número mayor a 0.");
+                    monto = parseFloat(prompt("Ingresa el monto:"));
+                }
+                if (transaccion === 'd') {
+                    saldo += monto; // Realizar depósito
+                    alert(`Has depositado $${monto}. Tu saldo actual es: $${saldo}`);
+                } else if (transaccion === 'r') {
+                    if (monto > saldo) {
+                        alert("Fondos insuficientes. No se puede realizar el retiro.");
+                    } else {
+                        saldo -= monto; // Realizar retiro
+                        alert(`Has retirado $${monto}. Tu saldo actual es: $${saldo}`);
+                    }
+                }
+                continuar = prompt("¿Deseas realizar otra transacción? (sí/no)")
+            } while (continuar === 'si');
+            alert(`¡Gracias por usar el Banco! Tu saldo final es: $${saldo}`);
+        }
+        simulacionBanco();
+    </script>
+</body>
+</html>

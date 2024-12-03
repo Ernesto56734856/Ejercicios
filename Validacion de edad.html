@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let tuEdad = parseInt(prompt('ingrese su edad:'))
+    do{
+        if(tuEdad < 0 || tuEdad > 120 || isNaN(tuEdad)){
+            alert(`${tuEdad} no es una edad valida`)
+        }
+        tuEdad = parseInt(prompt('ingrese su edad nuevamente:'))
+    }while(tuEdad < 0 || tuEdad > 120)
+    alert(`Tu edad es ${tuEdad} acceso concedido!`)
+</script>
+</html>

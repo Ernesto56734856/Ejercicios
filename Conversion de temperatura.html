@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let temperaturaSolicitada = parseInt(prompt('Cual es su temperatura en grados celcius?:'))
+    let temperaturaEnFarenheit = (temperaturaSolicitada * 9 / 5) + 32
+    alert(`Tu temperatura en farenheit es de ${temperaturaEnFarenheit}°F`)
+    let preguntaNueva = prompt('Deseas realizar otra conversion?: s/n')
+    while(preguntaNueva === 's'){
+        temperaturaSolicitada = parseInt(prompt('Cual es su temperatura en grados celcius?:'))
+        temperaturaEnFarenheit = (temperaturaSolicitada * 9 / 5) + 32
+        alert(`Tu temperatura en farenheit es de ${temperaturaEnFarenheit}°F`)
+        preguntaNueva = prompt('Deseas realizar otra conversion?: s/n')
+    }
+    alert('Gracias')
+</script>
+</html>

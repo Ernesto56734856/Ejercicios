@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let contador = 0
+    let notasAcumuladas = 0
+    let numeroSolicitado = parseInt(prompt('Ingresa un numero entre 0 y 100:'))
+    while(!(numeroSolicitado >= 0) || !(numeroSolicitado <= 100)){
+        alert('Ese no es un numero valido')
+        numeroSolicitado = parseInt(prompt('ingresalo nuevamente:'))
+    }
+    notasAcumuladas = notasAcumuladas + numeroSolicitado
+    contador ++
+    let preguntaSolicitada = prompt('Desea ingresar otro numero?: s/n')
+    while(preguntaSolicitada === 's'){
+        numeroSolicitado = parseInt(prompt('ingresa otra nota entre 0 y 100:'))
+        while(!(numeroSolicitado >= 0) || !(numeroSolicitado <= 100)){
+            alert('Ese no es un numero valido')
+            numeroSolicitado = parseInt(prompt('ingresalo nuevamente:'))
+        }
+        notasAcumuladas = notasAcumuladas + numeroSolicitado
+        contador ++
+        preguntaSolicitada = prompt('Desea ingresar otro numero?: s/n')
+    }
+    let promedioDeNotas = notasAcumuladas / contador
+    alert(`Tu acumulado de notas es ${notasAcumuladas} y el numero total de notas es de ${contador} por lo que tu promedio de notas es de: ${promedioDeNotas}`)
+</script>
+</html>

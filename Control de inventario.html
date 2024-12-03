@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Inventario</title>
+</head>
+<body>
+    <script>
+        function controlDeInventario() {
+            const inventario = [];
+            let continuar;
+            do {
+                let producto = prompt("Ingrese el nombre del producto:");
+                while (!producto || producto.trim() === "") {
+                    alert("El nombre del producto no puede estar vacío.");
+                    producto = prompt("Ingrese el nombre del producto:");
+                }
+                let cantidad = parseInt(prompt(`Ingrese la cantidad de "${producto}":`));
+                while (isNaN(cantidad) || cantidad <= 0) {
+                    alert("La cantidad debe ser un número válido mayor a 0.");
+                    cantidad = parseInt(prompt(`Ingrese la cantidad de "${producto}":`));
+                }
+                inventario.push({ producto, cantidad });
+                continuar = prompt("¿Desea agregar otro producto? (sí/no)").toLowerCase();
+            } while (continuar === 'si');
+            if (inventario.length > 0) {
+                alert("Inventario completo:" + inventario.map(item => `${item.producto}: ${item.cantidad}`));
+            } else {
+                alert("No se agregó ningún producto al inventario.");
+            }
+            alert("¡Gracias por usar el control de inventario!");
+        }
+        controlDeInventario();
+    </script>
+</body>
+</html>

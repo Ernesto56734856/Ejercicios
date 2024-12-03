@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    alert('Lancemos un dado')
+    let dado = Math.floor(Math.random() * 6) + 1;
+    alert(`El numero del dado es ${dado}`)
+    let peticion = prompt('Quieres lanzar otra vez?:')
+    while(peticion !== 'no'){
+    dado = Math.floor(Math.random() * 6) + 1;
+    alert(`El numero del dado es ${dado}`)
+    peticion = prompt('Quieres lanzar otra vez?:')
+    }
+    alert(`Ok, tu ultimo lanzamiento es ${dado}`)
+</script>
+</html>

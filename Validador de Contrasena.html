@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de Contraseña</title>
+</head>
+<body>
+    <script>
+        function validadorDeContrasena() {
+            let contrasena;
+            let confirmacion;
+
+            do {
+                contrasena = prompt("Ingrese una nueva contraseña:");
+                confirmacion = prompt("Confirme su contraseña:");
+                if (contrasena !== confirmacion) {
+                    alert("Las contraseñas no coinciden. Inténtelo de nuevo.");
+                }
+            } while (contrasena !== confirmacion);
+            alert("¡Contraseña configurada exitosamente!");
+        }
+        validadorDeContrasena();
+    </script>
+</body>
+</html>

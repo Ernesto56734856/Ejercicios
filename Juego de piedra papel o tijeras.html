@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, Papel o Tijera</title>
+</head>
+<body>
+    <script>
+        function jugarPiedraPapelTijera() {
+            function eleccionComputadora() {
+                const opciones = ['piedra', 'papel', 'tijera'];
+                const indiceAleatorio = Math.floor(Math.random() * opciones.length);
+                return opciones[indiceAleatorio];
+            }
+
+            let jugarDeNuevo;
+
+            do {
+                let eleccionUsuario = prompt("Elige: piedra, papel o tijera");
+
+                while (!['piedra', 'papel', 'tijera'].includes(eleccionUsuario)) {
+                    alert("Elección no válida. Por favor, elige entre piedra, papel o tijera.");
+                    eleccionUsuario = prompt("Elige: piedra, papel o tijera");
+                }
+
+                const eleccionPC = eleccionComputadora();
+                alert(`La computadora eligió: ${eleccionPC}`);
+
+                if (eleccionUsuario === eleccionPC) {
+                    alert("¡Es un empate!");
+                } else if (
+                    (eleccionUsuario === 'piedra' && eleccionPC === 'tijera') || (eleccionUsuario === 'papel' && eleccionPC === 'piedra') || (eleccionUsuario === 'tijera' && eleccionPC === 'papel')
+                ) {
+                    alert("¡Ganaste!");
+                } else {
+                    alert("¡Perdiste!");
+                }
+                jugarDeNuevo = prompt("¿Quieres jugar de nuevo? (sí/no)");
+            } while (jugarDeNuevo === 'si');
+
+            alert("¡Gracias por jugar! Hasta la próxima.");
+        }
+        jugarPiedraPapelTijera();
+    </script>
+</body>
+</html>

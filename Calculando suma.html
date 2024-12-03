@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let numeroUno = parseInt(prompt('Ingresa un numero:'))
+    let numeroDos = parseInt(prompt('Ingresa un segundo numero:'))
+    resultado = numeroUno + numeroDos
+    alert(`el resultado de tu suma es ${resultado}`)
+    let pregunta = prompt('Deseas sumar otra vez?:')
+    while (pregunta !== 'no') {
+        numeroUno = parseInt(prompt('Ingresa un numero:'))
+        numeroDos = parseInt(prompt('Ingresa un segundo numero:'))
+        resultado = numeroUno + numeroDos
+        alert(`el resultado de tu suma es ${resultado}`)
+        pregunta = prompt('Deseas sumar otra vez?:')
+    }
+    alert('Gracias')
+</script>
+</html>
